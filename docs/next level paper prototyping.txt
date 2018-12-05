@@ -1,0 +1,13 @@
+                   | B  |          |  O  |
+                   | B  |          |  O  |
+                   | B  |          |  O  |
+                   | B  |          |  O  |
+                   | B  |          |  O  |
+                   | B  |          |  O  |
+                   | B  |          |  O  |
+                            
+                          CLEAR on-click clear table; change CLEAR to GENERATE
+
+
+
+                            
