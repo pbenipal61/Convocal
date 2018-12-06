@@ -10,34 +10,35 @@
 
 </head>
     <body>
+      <div id="intro">
+          <h1>Number base converter</h1>
+          <p>On this page you can convert numbers to different number systems. Select the number base you want to convert from with the buttons on the left, and select the base you want to convert to from the right. Then enter the value to convert to the text area in the left.</p>
+      </div>
         <div class="flex_container">
             <div class="input_set">
                     <div id="converter_buttons1">
-                            <button class="cb" onclick="changeSelection(0)">BIN</button>
-                            <button class="cb" onclick="changeSelection(1)">OCT</button>
-                            <button class="cb" onclick="changeSelection(1)">DEC</button>
-                            <button class="cb" onclick="changeSelection(3)">HEX</button>
+                            <button class="cb" onclick="change_selection(2,'i')">BIN</button>
+                            <button class="cb" onclick="change_selection(8,'i')">OCT</button>
+                            <button class="cb" onclick="change_selection(10,'i')">DEC</button>
+                            <button class="cb" onclick="change_selection(16,'i')">HEX</button>
                      
                     </div>
                     <div id="convert_input">
-                            <textarea name="user_input" rows="10" cols="40" id="textarea" oninput="convert()">
-                                The quick brown fox jumped over the lazy dog.
-                            </textarea>
+                            <textarea name="user_input" rows="10" cols="40" id="textarea" oninput="convert_middleware()" placeholder="Convert value"></textarea>
                     </div>
 
             </div>
             <div class="input_set">
                     <div id="converter_buttons2" >
-                                <button class="cb" onclick="changeSelection(0)">BIN</button>
-                                <button class="cb" onclick="changeSelection(1)">OCT</button>
-                                <button class="cb" onclick="changeSelection(2)">DEC</button>
-                                <button class="cb" onclick="changeSelection(3)">HEX</button>
+                                <button class="cb" onclick="change_selection(2,'o')">BIN</button>
+                                <button class="cb" onclick="change_selection(8,'o')">OCT</button>
+                                <button class="cb" onclick="change_selection(10,'o')">DEC</button>
+                                <button class="cb" onclick="change_selection(16,'o')">HEX</button>
                          
                     </div>
                     <div id="convert_output">
-                                <textarea name="convert_output" rows="10" cols="40">
-                                The quick brown fox jumped over the lazy dog.
-                                </textarea>
+                                <textarea  name="convert_output" rows="10" cols="40" placeholder="output value" id="textarea_output" readonly></textarea>
+                                
                     </div>
             </div>
             <div id="comment">
