@@ -5,6 +5,10 @@ body{
     background-color: #dfe3ee;
     
 }
+.flex_container{
+    display: flex;
+    flex-direction: row;
+}
 #container{
     height: 100%;
     display: flex;
@@ -66,8 +70,6 @@ body{
     background-color: #4C71CC; 
     border-color: #4C71CC; 
 }
-
-
 #left_side_panel{
     border-radius: 8px; 
     width: 75%;
@@ -75,3 +77,32 @@ body{
     height: 700px;
     border: 2px solid #dfe3ee;
 }
+#converter_buttons{
+    border-radius: 8px; 
+    width: 25%;
+    background-color: white; 
+    height: 300px;
+    border: 2px solid #dfe3ee;
+}
+.cb{
+    float: left;
+    background-color: #D3D04F; 
+    border-color: #D3D04F; 
+    border: 1px #D3D04F;
+}
+.input_set{
+    display: flex;
+    flex-direction: column;
+}
+/* #cb2{
+    background-color: #D3D04F; 
+    border-color: #D3D04F; 
+}
+#cb3{
+    background-color: #D3D04F; 
+    border-color: #D3D04F; 
+}
+#cb4{
+    background-color: #D3D04F; 
+    border-color: #D3D04F; 
+} */
