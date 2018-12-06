@@ -30,6 +30,10 @@ body{
     display: flex;
     flex-direction: column;
 }
+textarea{
+    text-align: right;
+    padding-right: 5%;
+}
 /* #cb2{
     background-color: #D3D04F; 
     border-color: #D3D04F; 
