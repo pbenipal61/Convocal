@@ -1,188 +1,305 @@
-var inp = "";
-
 function init(){
     inp = String(document.getElementById("input_exp").value);
-    if(inp[inp.length - 1] == "\\"){
-        document.getElementById("input_exp").value = inp+"/";
-    }else if(inp[inp.length - 1] == "/"){
-        document.getElementById("input_exp").value = inp+"\\";
+    if(inp[0] != ")"){
+        inp = "(" + inp + ")";
     }
-    if(inp.length > 0){
-        process_input();
+    
+    var r = separate_out_variables(inp);
+    
+    if(r!=null){
+        
+        process_middleware(r);
     }
    
-    
 }
-var bracket_openings = [];
-var bracket_closings = [];
-var num_enclosures = 0;
-function process_input(){
-    var temp_num_enclosures = 0;
-    var temp_num_enclosures_closing = 0;
-    if(inp.indexOf("(") != -1){
-        for(var i = 0; i < inp.length ; i++){
-            if(inp[i] == '('){
-                temp_num_enclosures ++;
-                if(bracket_openings.indexOf(i) == -1){
-                    bracket_openings.push(i);
-                }
-                
-            }
-            if(inp[i] == ')'){
-                temp_num_enclosures_closing ++;
-                bracket_closings.push(i);
-                
-            }
-        }
-        if(temp_num_enclosures != temp_num_enclosures_closing){
-            console.log("Syntax error");
-        }else{
-            num_enclosures = temp_num_enclosures;
-            console.log(num_enclosures);
-            
-            console.log("os are " + bracket_openings);
-            // var substr  = inp.substring(inp[bracket_openings[bracket_openings.length-1]],inp[bracket_closings[0]]);
-            // console.log(inp[bracket_openings[bracket_openings.length-1]]+" "+inp[bracket_closings[0]])
-            // console.log(substr);
+function process_middleware(r){
+
+    // var table_div = document.getElementById("output");
+    // var table = document.createElement('TABLE');
+    // table.border = '1';
+
+    // var tableBody = document.createElement('TBODY');
+    // table.appendChild(tableBody);
 
 
-        }
-        
-        
+    var bracket_openings = r.bracket_openings;
+    var bracket_closings = r.bracket_closings;
+    var input_string = ""+r.str;
+    var vars = r.vars;
+    
+    var variable_neg_check_a = vars[0], variable_neg_check_b= vars[1];
+
+    var output_str = `<table> <tr>`;
+//<th>${variable_neg_check_b}</th> <th>${r.str}</th></tr>
+    if(variable_neg_check_a.indexOf("~") != -1){
+        variable_neg_check_a = variable_neg_check_a[1];
+      output_str = output_str + `<th>${variable_neg_check_a}</th> <th>${'~'+variable_neg_check_a}</th>`;
     }else{
-            var vars = [];
-            console.log("No enclosures found");
-            solve_part(inp);
-            
+        output_str = output_str + `<th>${variable_neg_check_a}</th> `;
+      
+    }
+    if(variable_neg_check_b.indexOf("~") != -1){
+        variable_neg_check_b = variable_neg_check_b[1];
+       output_str = output_str + `<th>${variable_neg_check_b}</th> <th>${'~'+variable_neg_check_b}</th>`;
+ 
+
+    }else{
+        output_str = output_str + `<th>${variable_neg_check_b}</th> `;
     }
     
-var allow_sol = true; var computation_type="";    
-function solve_part(inp2){
-    var last_checked_index  = -1;
-    if(inp2[0] == '~' || alphabet_check(inp2[0]) == true){
-                
-        if(alphabet_check(inp2[0]) == true){
-            vars.push(inp2[0]);
-            last_checked_index = 0;
+    output_str = output_str +`<th>${r.str}</th></tr>`;
+    for(var p = 0 ; p < 2 ; p++){
+         for(var q = 0 ; q < 2 ; q++){
             
-            console.log(vars);
-        }
-        else{
-            if(alphabet_check(inp2[last_checked_index+1])){
-                vars.push("~"+inp2[last_checked_index +1]);
-                last_checked_index = 1;
-                console.log(vars);
-                
-            }
-            else{
-                allow_sol = false;   
-                console.log( "second char is not a letter or curly");
-            }
-        }
-
-
-        if(inp2[last_checked_index+1] == "\\" || inp2[last_checked_index+1] == "/" ){
+            var a = vars[0], b = vars[1];
+                output_str = output_str + `<tr><td>${p}</td>`;
+                if(a.indexOf("~") != -1){
+                    a = a[1];
+                   output_str = output_str + `<td>${get_not(p)}</td>`;
+                }
+                output_str = output_str + `<td>${q}</td>`;
+                if(b.indexOf("~") != -1){
+                    b = b[1];
+                    output_str = output_str + `<td>${get_not(q)}</td>`;
+                }
             
-            if(inp2[last_checked_index+1] == "\\"){
+            console.log("p is " + p +" " +  "q is " +q );
+            var final_ans = "";
+            var solvable_exp = input_string;
+            var solvable_brackets = 0;
+            for(var i = 0 ; i < solvable_exp.length ; i++){
                 
-                computation_type = "or";
+                if(solvable_exp[i] == a){
+                    solvable_exp = solvable_exp.replace(solvable_exp[i],p);
+                }
+                if(solvable_exp[i] == b){
+                    solvable_exp = solvable_exp.replace(solvable_exp[i],q);
+                }
             }
-            else if(inp2[last_checked_index+1] == "/" ){
-                computation_type = "and";
+            var current_string = solvable_exp;
+            
+            while(solvable_brackets < bracket_openings.length){
+                console.log("main current string is " + current_string);
+                var a = separate_out_variables(current_string);
+                if( a != null){
+                       
+                        var bo = a.bracket_openings;
+                        console.log("bracket openings are " + bo);
+                        var bc = a.bracket_closings;
+                        console.log("bracket closings are " + bc);
+                        var n1 = bo[bo.length-1];
+                        var n2 = bc[0];
+                        if(n2<n1){
+                            n2 = bc[bc.length -1];
+                        }
+                        var sub_str = current_string.substring(n1,n2) ;
+                        console.log("substring before adding para" + sub_str);
+                        if(sub_str[sub_str.length - 1] != ")"){
+                            sub_str = sub_str + ")";
+                        }
+                        console.log("current string right here is  " + current_string);
+                        console.log(sub_str);
+                        var ans = compute_expression(sub_str);
+                        console.log("ans is " + ans);
+                        if(ans!=null){
 
+                            final_ans = ans;
+                            current_string = current_string.replace(sub_str,ans);
+                            console.log("current string is " + current_string);
+                            solvable_brackets++;
+
+                        }else{
+                            break;
+                        }
+
+
+                }else{
+                    break;
+                }
+               
             }
-            last_checked_index = last_checked_index + 1;
+           
+            output_str = output_str + `<td>${final_ans}</td></tr>`;
+            console.log( p + " " + q + " " + final_ans);
+
+            //    output_str = output_str + `<tr><td>${p}</td><td>${q}</td><td>${final_ans}</td></tr>`;
+               
+         }
+    }
+    output_str = output_str + "</table>";
+    show_output(output_str);
+}
+
+function separate_out_variables(input_string){
+    var syntax_correct = true;
+    var vars = [];
+    var bracket_openings = [], bracket_closings = [];
+    var gates = [];
+    input_string = ""+input_string;
+    for(var i = 0 ; i < input_string.length ; i++){
+        if(match_for_acceptable_alphabet(input_string[i])== true){
+          if(input_string[i-1] == "~"){
+            if(vars.indexOf("~"+input_string[i]) == -1){
+                // console.log("pushing " + inp[i]);
+                 vars.push("~"+input_string[i]);
+             }
+          }else{
+            if(vars.indexOf(input_string[i]) == -1){
+                // console.log("pushing " + inp[i]);
+                 vars.push(input_string[i]);
+             }
+          }
+                
+            
+        }
+        else if(input_string[i] == "("){
+            if(bracket_openings.indexOf(i) == -1){
+                bracket_openings.push(i);
+            }
+        }
+        else if(input_string[i] == ")"){
+            if(bracket_closings.indexOf(i) == -1){
+                bracket_closings.push(i);
+            }
+        }
+        else if(input_string[i] == "/" || input_string[i] == "\\"){
+            
+            if(input_string[i] == "\\"){
+                if(input_string[i+1] == "/"){
+                   
+                    gates.push("or");
+                }
+                else if(input_string[i-1] == "/"){
+                    gates.push("and");
+                }
+            }
             
         }else{
-            allow_sol = false;   
-            console.log(last_checked_index+1 + " "+ "doesnt define operator");
-        }
-
-        if(alphabet_check(inp2[last_checked_index+2])==true ){
+            // if(input_string[i] != "~"){
+            //     console.log("Syntax error with " + input_string[i]);
+            //     syntax_correct = false;
+            // }
             
-            vars.push(inp2[last_checked_index+2]);
-            last_checked_index = last_checked_index+2;
-     
         }
-        else{
-            if(alphabet_check(inp2[last_checked_index+3])==true && inp2[last_checked_index+2] == '~'){
-                vars.push("~"+inp2[last_checked_index+3]);
-                last_checked_index = last_checked_index+3;
-            
-            }
-            else{
-                 allow_sol = false;   
-                console.log(inp2[last_checked_index+3] + " " + "isnt curly or letter");
+    }
+    
+    if(bracket_openings.length != bracket_closings.length){
+        console.log("Syntax error");
+        syntax_correct = false;
+    }
+    // console.log(gates);
+    // console.log(vars);
+    // console.log(bracket_openings);
+    // console.log(bracket_closings);
 
-            }
-
-        }
-
-
+    if(syntax_correct){
+        var syntaxCheckRData = new SyntaxCheckRData(input_string,vars,bracket_openings,bracket_closings,gates);
+        return syntaxCheckRData;
     }
     else{
-        allow_sol = false;   
-        console.log("First letter is not a letter or curly");
-    }
-
-
-    console.log(allow_sol);
-    if(allow_sol != false ){
-        compute(vars,computation_type);
+        console.log(input_string + " here");
+        return null;
     }
 
 }
 
-function compute(vars,type){
-    console.log("final variables are " + vars);
-        for(var p = 0 ; p < 2 ; p++){
-            for(var q = 0 ; q < 2 ; q++){
-                console.log(p + " " + q +" " +gate_check(p,q,type));
-                
-            }
+
+//#region TOOLS
+
+function match_for_acceptable_alphabet(v){
+   
+    var ret_val;
+        var letter = /^[A-Za-z0-1]/;
+        if(v.match(letter))
+        {
+          ret_val =  true;
         }
+        else
+        {
+          ret_val =  false;
+        }
+
+      // console.log("Match for " + v + " is " + ret_val);
+        return ret_val;
+    
+}
+function get_not(v){
+    if(v == 0){
+        return 1;
+    }
+    else if(v ==1 ){
+        return 0;
+    }
 }
 
-function gate_check(p,q,type){
-    console.log(type);
-    if(type == "or"){
-        if(p == 1 || q == 1){
-           return 1;
-        }
-        else{
-           return 0;
-        }
-    }else if(type == "and"){
-        if(p == 1 && q == 1){
+function compute_expression(ex){
+
+   // console.log("ex is " + ex);
+    var r = separate_out_variables(ex);
+    var vars = r.vars;
+   // console.log("ex gate is " + r.gates);
+    console.log("ex vars are " + vars + " and gate is " + r.gates);
+    var a  , b  ;
+    if((""+vars[0]).indexOf("~") != -1) {
+        a = get_not(Number(vars[0][1]));
+    }
+    
+    if((""+vars[1]).indexOf("~") != -1) {
+        b = get_not(Number(vars[1][1]));
+    }
+
+    if(a == null){
+        a = Number(vars[0]); 
+    }
+    if( b == null){
+        b = Number(vars[1]);
+    }
+    
+    console.log("a is " + vars[0] +" b is " + vars[1]);
+    if(r.gates[0] == "and"){
+        if(a == 1 && b == 1){
+            return 1;
+        }else if(vars.length == 1 && a == 1){
             return 1;
         }
         else{
             return 0;
         }
-
     }
-}
-
-   // #region tools  
-function alphabet_check(v){
-    try{
-        var letter = /^[A-Za-z]+$/;;
-        if(v.match(letter))
-        {
-          return true;
+    else{
+        if(a ==1 || b == 1){
+            return 1;
+        }else if(vars.length == 1 && a == 1){
+            return 1;
         }
-        else
-        {
-          return false;
+        else{
+            return 0;
         }
     }
-    catch(e){
-        return false;
-    }
-   
+
+    
+
 }
 
-    //#endregion
+function show_output(v){
+    
+    document.getElementById("output").innerHTML = v;
+}
 
 
+
+
+
+//#endregion
+
+
+class SyntaxCheckRData {
+    constructor(str,vars, bracket_openings,bracket_closings,gates) {
+        this.str = str;
+        this.vars = vars;
+        this.bracket_openings = bracket_openings;
+        this.bracket_closings = bracket_closings;
+        this.gates = gates;
+        
+    }
 }
