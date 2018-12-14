@@ -86,7 +86,7 @@ function convert(inp){
 function throwError(e){
 
     if(e ==  null){
-        e = "Invalid output";
+        e = "Invalid input";
         document.getElementById("comment").textContent = e;
     }
 }

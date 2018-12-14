@@ -1,39 +1,74 @@
+
 body{
     margin: auto;
     margin-top: 5px;
     width: 95%;
-    background-color: #dfe3ee;
-    
+
 }
 #intro{
     text-align: center;
-    font-family: Verdana;
+    font-family:  Roboto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #5DD16B;
+ 
+}
+
+.converter_buttons{
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px; 
+    
+    
 }
 .flex_container{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
-#converter_buttons{
-    border-radius: 8px; 
-    width: 25%;
-    background-color: white; 
-    height: 300px;
-    border: 2px solid #dfe3ee;
-}
+
 .cb{
-    float: left;
+    
     background-color: #D3D04F; 
     border-color: #D3D04F; 
-    border: 1px #D3D04F;
+    padding: 5px;
+    border-radius: 8px;
+    width: 25%;
+   
 }
-.input_set{
-    display: flex;
-    flex-direction: column;
+.convert_put{
+    border-radius: 8px;
 }
+
+#input_set{
+   
+    margin-right: 2%;
+
+}
+#output_set{
+    margin-left: 2%;
+    
+
+}
+
 textarea{
     text-align: right;
-    padding-right: 5%;
+    
+    border-radius: 8px;
+   
 }
+#comment{
+    text-align: center;
+    margin-top: 10px;
+    margin-right: auto;
+    
+}
+
 /* #cb2{
     background-color: #D3D04F; 
     border-color: #D3D04F; 
@@ -47,5 +82,8 @@ textarea{
     border-color: #D3D04F; 
 } */
 button:focus{
-    color:red;
+    background-color:red;
+    
 }
+
+

@@ -1,0 +1,36 @@
+#intro{
+    text-align: center;
+    font-family:  Roboto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #5DD16B;
+ 
+}
+#Instructions{
+    text-align: center;
+    font-family:  Roboto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #5DD16B;
+}
+#input{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: auto;
+}
+#input input{
+    height: 50px;
+    width: 50%;
+    padding: 5px;
+}

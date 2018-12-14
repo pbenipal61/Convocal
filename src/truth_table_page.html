@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="backend/truth_table_page.js"></script>
-    </head>
-    <body>
-       
+
+<head>
+    <script src="backend/truth_table_page.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/truth_table.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="left_side_panel">
+            <div id="right_side_panel">
+                <section id="right_side_panel_buttons">
+                    <a href="index.html"><button id="rp_btn_1">Home</button></a>
+                    <a href="cnr.html"><button id="rp_btn_2">Number base conversion</button></a>
+                    <a href="table.html"><button id="rp_btn_3">Character tables</button></a>
+                    <a href="truth_table_page.html"><button id="rp_btn_4">Truth tables</button></a>
+                    <a href="nolink"><button id="rp_btn_5">btn5</button></a>
+                    <a href="nolink"><button id="rp_btn_6">btn6</button></a>
+
+                </section>
+            </div>
+        </div>
+        <div id="intro">
+            <h1>Truth tables</h1>
+            <p>This tool helps you calculate the truth table for a logical statement</p>
+        </div>
+        <div id="Instructions">
+            <h1>Instructions</h1>
+            <p>\/ is or and /\ is and and ~ denotes a not variable . Correct syntax is important for this tool to work.</p>
+        </div>
+    </div>
+    <section id="input">
         <input type="text" name="enter formula" placeholder="enter formula" id="input_exp" oninput="init()"><br>
-        <div id="output"></div>
-       
-    </body>
+    </section>
+    <div id="output"></div>
+
+
+
+
+
+
+
+</body>
+
 </html>

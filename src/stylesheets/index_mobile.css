@@ -1,0 +1,19 @@
+@media screen and (min-width: 320px) and (max-width: 774px)
+{
+    body, .flex_container, #container, #right_side_panel, #right_side_panel_buttons, #right_side_panel_buttons button,
+    #rp_btn_1, #rp_btn_2, #rp_btn_3, #rp_btn_4, #rp_btn_5, #rp_btn_6, #rp_btn_7, #left_side_panel{
+        text-align: center;
+        width: 100%;
+        align-content: center;
+        float: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-size: 8px;
+        }
+
+
+        #cnr_desc h2{
+           font-size: 10px
+        }
+}
