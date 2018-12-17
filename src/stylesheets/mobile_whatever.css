@@ -1,14 +1,8 @@
-@media screen and (min-width: 320px) and (max-width: 1020px)
+@media screen and (min-width: 320px) and (max-width: 549px)
 {
-    body, .flex_container, #container, #right_side_panel, #right_side_panel_buttons, #right_side_panel_buttons button,
-    #rp_btn_1, #rp_btn_2, #rp_btn_3, #rp_btn_4, #rp_btn_5, #rp_btn_6, #rp_btn_7, #left_side_panel, #intro, #converter_buttons, 
-    .cb, #input_set, #output_set, textarea, #comment, button:focus{
-        text-align: center;
-        width: 100%;
-        align-content: center;
-        float: none;
-        display: block;
-        margin: 0;
-        padding: 0;
-            }
+    .flex_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

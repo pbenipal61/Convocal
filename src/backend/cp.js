@@ -1,9 +1,24 @@
+
+var formula = 1;
+function formula_selection(val) {
+    if (val == 0) {
+        document.getElementById("npr").style.backgroundColor = "#3177B7";
+        document.getElementById("ncr").style.backgroundColor = "white";
+        formula = 0;
+    }
+    else {
+        document.getElementById("npr").style.backgroundColor = "white";
+        document.getElementById("ncr").style.backgroundColor = "#3177B7";
+        formula = 1;
+    }
+}
+
+
 function calculate() {
-    var s = document.querySelector('input[name="selection"]:checked').value;
     var n = document.getElementById('n').value;
     var r = document.getElementById('r').value;
     var r;
-    if (s == 1) {
+    if (formula == 1) {
         r = factorial(n) / (factorial(n - r) * factorial(r));
     } else {
         r = factorial(n) / factorial(n - r);

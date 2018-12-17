@@ -8,6 +8,10 @@
     background-color: #dfe3ee;
     
 }
+#logo_div{
+    display: flex;
+    justify-content: center;
+}
 .flex_container{
     display: flex;
     flex-direction: row;
@@ -31,31 +35,45 @@
 }
 
 #right_side_panel_buttons {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
    
     border: 2px solid #dfe3ee;
     border-radius: 8px;
-    padding: 5px;
+    margin-right: auto;
+    margin-left: auto;
     justify-content: center;
     align-content: center;
     
     
 }
+.main_buttons_region_1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   
+   
+    
+    justify-content: center;
+   
+}
 #right_side_panel_buttons button{
     float: left;
     margin-top: 5px;
     height: 60px;;
-    margin-right: 2%;
+ 
+    margin-left: 2%;
     width: 98%;
-
+    color: #3177B7;
+    outline: none;
+   
 
 }
 
 #rp_btn_1{
    
-    border: black 1px solid;
+   
     border-radius: 8px;
     background-color: white;
   
@@ -63,14 +81,14 @@
 }
 #rp_btn_2{
     
-    border: black 1px solid;
+    
     border-radius: 8px;
     background-color: white;
    
 }
 #rp_btn_3{
    
-    border: black 1px solid;
+    
     border-radius: 8px;
     background-color: white;
    
@@ -78,7 +96,7 @@
 }
 #rp_btn_4{
    
-    border: black 1px solid;
+    
     border-radius: 8px;
     background-color: white;
   
@@ -87,7 +105,7 @@
 #rp_btn_5{
    
     
-    border: black 1px solid;
+    
     border-radius: 8px;
     background-color: white;
     
@@ -96,77 +114,85 @@
 #rp_btn_6{
     
     
-    border: black 1px solid;
+   
     border-radius: 8px;
     background-color: white;
  
 }
 
-#left_side_panel{
-    position: relative;
-    margin: auto;
-    border-radius: 8px; 
-    width: 75%;
-    
-    
-}
+
 a{
     width: 33%;
 }
 
 #cnr_desc{
+    color: white;
     padding: 10px;
-    width: 30%;
+    width: 25%;
     border-radius: 8px;
-    background-color: #C4417D;
+    background-color: #2E6AC1;
     margin: 1%;
 }
 
 #table_desc{
+    color: white;
     padding: 10px;
-    width: 30%;
+    width: 25%;
     border-radius: 8px;
-    background-color: #C9664C;
+    background-color: #4691A3;
     margin: 1%;
 }
 #truth_table_desc{
-    padding: 10px;
-    width: 30%;
+    color: white;
+    padding: 2%;
+    width: 25%;
     border-radius: 8px;
     margin: 1%;
-    background-color: #7E4FC9;
+    background-color: #4691A3;
+    
 }
 #random_desc{
-    width: 30%;
+    color: white;
+    width: 25%;
     padding: 10px;
     border-radius: 8px;
-    background-color: #5DD16B;
+    background-color: #E89F58;
     margin: 1%;
     
 }
 #cp_desc{
-    width: 30%;
+    color: white;
+    width: 25%;
     padding: 10px;
     border-radius: 8px;
-    background-color: #5DD16B;
+    background-color: #601779;
     margin: 1%;
     
 }
 #game_desc{
-    width: 30%;
+    color: white;
+    width: 25%;
     padding: 10px;
     border-radius: 8px;
-    background-color: #5DD16B;
+    background-color: #C53520;
     margin: 1%;
+    
     
 }
 #desc_container{
-    width: 98%;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#desc_container_top{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center;
 }
-#desc_container div{
+#desc_container_top div{
     overflow: auto;
 }

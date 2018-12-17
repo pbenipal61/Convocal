@@ -6,7 +6,7 @@
         width: 100%;
         align-content: center;
         float: none;
-        display: block;
+       
         margin: 0;
         padding: 0;
         font-size: 8px;
@@ -15,5 +15,42 @@
 
         #cnr_desc h2{
            font-size: 10px
+        }
+
+        #right_side_panel_buttons {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+           
+            border: 2px solid #dfe3ee;
+            border-radius: 8px;
+            
+            justify-content: center;
+           
+            
+            
+        }
+        .main_buttons_region_1{
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+           
+            border: 2px solid #dfe3ee;
+            border-radius: 8px;
+            margin-right: auto;
+            margin-left: auto;
+            justify-content: center;
+            align-content: center;
+        }
+        #right_side_panel_buttons button{
+            
+            float: left;
+            margin-top: 3px;
+            height: 40px;;
+            margin: auto;
+            width: 95%;
+            color: #3177B7;
+        
+        
         }
 }

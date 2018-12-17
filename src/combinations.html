@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./backend/cp.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/combinations.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index_mobile.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="logo_div">
+        <img src="./svgs/logo.svg">
+    </div>
+    <div id="left_side_panel">
+        <div id="right_side_panel">
+            <section id="right_side_panel_buttons">
+                <div class="main_buttons_region_1">
+                    <a href="index.html"><button id="rp_btn_1">Home</button></a>
+                    <a href="cnr.html"><button id="rp_btn_2">Number
+                            Base Conversion</button></a>
+                    <a href="character_table.html"><button id="rp_btn_3">Character
+                            Tables</button></a>
+                </div>
+                <div class="main_buttons_region_1">
+                    <a href="truth_table_page.html"><button id="rp_btn_4">Truth
+                            Tables</button></a>
+                    <a href="combinations.html"><button id="rp_btn_5">Combinatorics</button></a>
+                    <a href="anims.html"><button id="rp_btn_6">Geometric Animation</button></a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="intro">
+        <div id="intro_image_holder">
+            <img src="./svgs/combinatrics_svg.svg" width="80%">
+        </div>
+        <div id="intro_instructionss_holder">
+            <h1>Combinatorics</h1>
+
+            <p>Combinations and Permutations formula </p>
+        </div>
+    </div>
+
+    <div id="main_content">
+
+        <div id="input_fields">
+            <section id="input_fields_1">
+                <input type="text" id="r" placeholder="r">out of <input type="text" id="n" placeholder="n"><br>
+            </section>
+            <section id="input_fields_2">
+                <button name="selection" value="0" id="npr" onclick="formula_selection(0)"> Order of selection matters
+                    (<sup>n</sup>P<sub>r</sub>)</button>
+                <button style="background-color: #3177B7" name="selection" value="1" id="ncr" onclick="formula_selection(1)""> Order of selection
+                    doesn't matter (<sup>n</sup>C<sub>r</sub>)<br></button>
+            </section>
+            
+            <section id='input_fields_3'>
+                    <button value="
+                    calculate" onclick="calculate()">Calculate
+                </button>
+        </div>
+    </div>
+
+
+
+
+    </div>
+    <div id="output">
+    </div>
+
+</body>
+
+</html>

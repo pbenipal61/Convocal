@@ -1,9 +1,13 @@
 
-body{
+* {
+    box-sizing: border-box;
+  }
+  body{
     margin: auto;
     margin-top: 5px;
     width: 95%;
-
+    background-color: #dfe3ee;
+    
 }
 #intro{
     text-align: center;
@@ -11,19 +15,28 @@ body{
     margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
-
+    margin-top: 2%;
     width: 70%;
     padding: 10px;
     border-radius: 8px;
-    background-color: #5DD16B;
+    background-color: #2E6AC1;
+    color: white;
+    display: flex;
+    flex-direction: row;
  
+}
+#intro_image_holder{
+    width: 50%;
+}
+#intro_instructions_holder{
+    width: 50%;
 }
 
 .converter_buttons{
     display: flex;
     flex-direction: row;
     border-radius: 8px; 
-    
+    margin: 2px;
     
 }
 .flex_container{
@@ -35,10 +48,13 @@ body{
 .cb{
     
     background-color: #D3D04F; 
-    border-color: #D3D04F; 
+    border: none;
+   outline: none;
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 5px;
+    margin: 1px;
     width: 25%;
+    color: white;
    
 }
 .convert_put{
@@ -48,10 +64,12 @@ body{
 #input_set{
    
     margin-right: 2%;
+    margin-left: 2%;
 
 }
 #output_set{
     margin-left: 2%;
+    margin-right: 2%;
     
 
 }
@@ -81,9 +99,6 @@ textarea{
     background-color: #D3D04F; 
     border-color: #D3D04F; 
 } */
-button:focus{
-    background-color:red;
-    
-}
+
 
 

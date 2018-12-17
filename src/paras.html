@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./backend/paras.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/paras.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="left_side_panel">
+        <div id="right_side_panel">
+            <section id="right_side_panel_buttons">
+                <a href="index.html"><button id="rp_btn_1">Home</button></a>
+                <a href="cnr.html"><button id="rp_btn_2">Number base conversion</button></a>
+                <a href="table.html"><button id="rp_btn_3">Character tables</button></a>
+                <a href="truth_table_page.html"><button id="rp_btn_4">Truth tables</button></a>
+                <a href="combinations.html"><button id="rp_btn_5">combinatorics</button></a>
+                <a href="paras.html"><button id="rp_btn_6">Paras</button></a>
+
+            </section>
+        </div>
+    </div>
+    <div id="intro">
+        <h1>Truth tables</h1>
+        <p>This tool helps you calculate the truth table for a logical statement</p>
+    </div>
+    <div id="Instructions">
+        <h1>Instructions</h1>
+        <p>\/ is or and /\ is and and ~ denotes a not variable . Correct syntax is important for this tool to work.</p>
+    </div>
+    <div id="input_area">
+
+        <textarea name="user_input" rows="10" cols="40" id="textarea" oninput="extract_middleware()" placeholder="Input text"></textarea>
+
+    </div>
+    <div class="output" id="output"></div>
+</body>
+
+</html>

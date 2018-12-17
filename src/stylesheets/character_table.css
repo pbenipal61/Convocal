@@ -1,3 +1,13 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    margin: auto;
+    margin-top: 5px;
+    width: 95%;
+    background-color: #dfe3ee;
+    
+}
 #intro{
     text-align: center;
     font-family:  Roboto;
@@ -18,21 +28,10 @@
 #intro_image_holder{
     width: 50%;
 }
-#input{
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: auto;
-}
-#input input{
-    height: 50px;
+#intro_instructions_holder{
     width: 50%;
-    padding: 5px;
 }
-#output{
-    display: flex;
-    justify-content: center;
-}
+
 table{
     margin-top: 2%;
     border-collapse: collapse;
@@ -42,4 +41,15 @@ th, td{
     padding: 0.5rem;
     border: 1px solid #999;
     text-align: center;
+}
+
+#generate_button_div{
+
+    display: flex;
+    justify-content: center;
+}
+
+#output{
+    display: flex;
+    justify-content: center;
 }

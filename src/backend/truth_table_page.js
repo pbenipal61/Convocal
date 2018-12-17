@@ -10,6 +10,9 @@ function init() {
 
         process_middleware(r);
     }
+    if (inp.length == 0) {
+        show_output("");
+    }
 
 }
 function process_middleware(r) {

@@ -1,0 +1,92 @@
+
+#main_content{
+    display: flex;
+    width: 100%;
+   
+    justify-content: center;
+    
+}
+#intro{
+    text-align: center;
+    font-family:  Roboto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #601779;
+    color: white;
+    display: flex;
+    flex-direction: row;
+ 
+}
+#intro_image_holder{
+    width: 50%;
+}
+#intro_instructions_holder{
+    width: 50%;
+}
+#input_fields{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    height: 50%;
+    width: 70%;
+}
+#input_fields_1{
+
+    display: flex;
+    justify-content: center;
+    height: 50%;
+}
+#input_fields_1 input{
+
+    height: 50px;
+    width: 50%;
+    padding: 5px;
+    margin-right: 2%;
+    font-size: 1.5em;
+}
+#input_fields_2{
+
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+}
+#input_fields_2 button{
+
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    border-radius: 8px;
+    font-size: 1em;
+
+   
+}
+#input_fields_3{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+#input_fields_3 input{
+    
+    width: 30%;
+    margin-right: 2%;
+    height: 50px;
+}
+
+#output{
+   
+    width: auto;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    font-size: 5em;
+    border-radius: 8px;
+}
+
+button{
+    outline: none;
+}

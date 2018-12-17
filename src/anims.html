@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index_mobile.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/anims.css">
+    <script src="./backend/canvas.js"></script>
+</head>
+
+<body>
+    <div id="logo_div">
+        <img src="./svgs/logo.svg">
+    </div>
+    <div id="left_side_panel">
+        <section id="right_side_panel_buttons">
+            <div class="main_buttons_region_1">
+                <a href="index.html"><button id="rp_btn_1">Home</button></a>
+                <a href="cnr.html"><button id="rp_btn_2">Number
+                        Base Conversion</button></a>
+                <a href="character_table.html"><button id="rp_btn_3">Character
+                        Tables</button></a>
+            </div>
+            <div class="main_buttons_region_1">
+                <a href="truth_table_page.html"><button id="rp_btn_4">Truth
+                        Tables</button></a>
+                <a href="combinations.html"><button id="rp_btn_5">Combinatorics</button></a>
+                <a href="anims.html"><button id="rp_btn_6">Geometric Animation</button></a>
+            </div>
+        </section>
+
+
+    </div>
+    <div id="button_div"><button id="button" onclick="init_m()">Start</button></div>
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+
+</html>
