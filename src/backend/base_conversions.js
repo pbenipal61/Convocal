@@ -2,13 +2,19 @@ var input_ind = 2, output_ind = 10;
 
 var input_button = null, output_button = null;
 
-
+var use_counts_o = 0, use_counts_i = 0;
 
 
 function change_selection(ind, typ) {
+
     if (typ == "o") {
         output_ind = ind;
+        if (use_counts_o == 0) {
 
+            btn = document.getElementById("dec_button_o");
+            btn.style.backgroundColor = '#D3D04F';
+        }
+        use_counts_o++;
         if (input_button != null) {
             input_button.style.backgroundColor = "#D3D04F";
         }
@@ -32,6 +38,15 @@ function change_selection(ind, typ) {
         input_button = btn;
     }
     else if (typ == "i") {
+
+        if (use_counts_i == 0) {
+            btn = document.getElementById("bin_button_i");
+            btn.style.backgroundColor = '#D3D04F';
+
+        }
+        use_counts_i++;
+
+
         input_ind = ind;
         if (output_button != null) {
             output_button.style.backgroundColor = "#D3D04F";
@@ -61,6 +76,8 @@ function change_selection(ind, typ) {
 
 
     }
+    console.log("Use counts are " + `${use_counts_i} + ${use_counts_o}`);
+
     convert_middleware();
     console.log(ind + "of" + typ);
 }

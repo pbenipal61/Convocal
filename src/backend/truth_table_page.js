@@ -1,5 +1,9 @@
 function init() {
     inp = String(document.getElementById("input_exp").value);
+    if (inp.length == 0) {
+        console.log("here");
+        show_output(" ");
+    }
     if (inp[0] != ")") {
         inp = "(" + inp + ")";
     }
@@ -10,9 +14,7 @@ function init() {
 
         process_middleware(r);
     }
-    if (inp.length == 0) {
-        show_output("");
-    }
+
 
 }
 function process_middleware(r) {
@@ -34,21 +36,30 @@ function process_middleware(r) {
 
     var output_str = `<table border="1"> <tr>`;
     //<th>${variable_neg_check_b}</th> <th>${r.str}</th></tr>
-    if (variable_neg_check_a.indexOf("~") != -1) {
-        variable_neg_check_a = variable_neg_check_a[1];
-        output_str = output_str + `<th>${variable_neg_check_a}</th> <th>${'~' + variable_neg_check_a}</th>`;
+    if (variable_neg_check_b != null) {
+        if (variable_neg_check_a.indexOf("~") != -1) {
+            variable_neg_check_a = variable_neg_check_a[1];
+            output_str = output_str + `<th>${variable_neg_check_a}</th> <th>${'~' + variable_neg_check_a}</th>`;
+        } else {
+            output_str = output_str + `<th>${variable_neg_check_a}</th> `;
+
+        }
     } else {
-        output_str = output_str + `<th>${variable_neg_check_a}</th> `;
-
+        return;
     }
-    if (variable_neg_check_b.indexOf("~") != -1) {
-        variable_neg_check_b = variable_neg_check_b[1];
-        output_str = output_str + `<th>${variable_neg_check_b}</th> <th>${'~' + variable_neg_check_b}</th>`;
+    if (variable_neg_check_b != null) {
+        if (variable_neg_check_b.indexOf("~") != -1) {
+            variable_neg_check_b = variable_neg_check_b[1];
+            output_str = output_str + `<th>${variable_neg_check_b}</th> <th>${'~' + variable_neg_check_b}</th>`;
 
 
+        } else {
+            output_str = output_str + `<th>${variable_neg_check_b}</th> `;
+        }
     } else {
-        output_str = output_str + `<th>${variable_neg_check_b}</th> `;
+        return;
     }
+
 
     output_str = output_str + `<th>${r.str}</th></tr>`;
     for (var p = 0; p < 2; p++) {
@@ -61,10 +72,14 @@ function process_middleware(r) {
                 output_str = output_str + `<td>${get_not(p)}</td>`;
             }
             output_str = output_str + `<td>${q}</td>`;
-            if (b.indexOf("~") != -1) {
-                b = b[1];
-                output_str = output_str + `<td>${get_not(q)}</td>`;
+
+            if (b != null) {
+                if (b.indexOf("~") != -1) {
+                    b = b[1];
+                    output_str = output_str + `<td>${get_not(q)}</td>`;
+                }
             }
+
 
             console.log("p is " + p + " " + "q is " + q);
             var final_ans = "";

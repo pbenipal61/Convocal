@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
-   
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index_mobile.css">
 
-    <title>Homepage | Welcome</title>
+    <link rel="icon" type="image/gif" href="./svgs/logo.svg" />
+    <title>
+        Welcome to Convocal</title>
 </head>
-<body>
 
-        <div id="left_side_panel" >
-            
-            <section id="right_side_panel_buttons">
+<body>
+    <div id="logo_div">
+        <img src="./svgs/logo.svg">
+    </div>
+    <div id="left_side_panel">
+
+        <section id="right_side_panel_buttons">
+
+            <div class="main_buttons_region_1">
                 <a href="index.html"><button id="rp_btn_1">Home</button></a>
-                <a href="cnr.html"><button id="rp_btn_2">Number base conversion</button></a>
-                <a href="table.html"><button id="rp_btn_3">Character tables</button></a>
-                <a href="truth_table_page.html"><button id="rp_btn_4">Truth tables</button></a>                
-                <a href="nolink"><button id="rp_btn_5">btn5</button></a>
-                <a href="nolink"><button id="rp_btn_6">btn6</button></a>
-               
-            </section> 
-            <div id="desc_container">
-               <div id="cnr_desc">
-                <h2>Number Base Conversion</h2>
-                <p> This tool lets you to convert numbers to different number systems</p>
-               </div>
-            
-               <div id="table_desc">
-                    <h2>Table</h2>
-                    <p> This tool creates a number system conversion table</p>
-               </div>
-               <div id="truth_table_desc">
-                    <h2>Truth tables</h2>
-                    <p> This tool helps you calculate the truth table for a logical statement</p>
-               </div>
-               <div id="random_desc">
-                   <h2>Random Number Generator</h2>
-                   <p>This tool generates random numbers</p>
-               </div>
-               <div id="cp_desc">
-                    <h2>Combinations and Permutation</h2>
-                    <p>This tool generates random numbers</p>
-                </div>
-                <div id="game_desc">
-                        <h2>Combinations and Permutation</h2>
-                        <p>This tool generates random numbers</p>
-                </div>
-            </div> 
-    </div>  
+                <a href="cnr.html"><button id="rp_btn_2">Number System Conversion</button></a>
+                <a href="character_table.html"><button id="rp_btn_3">Character Tables</button></a>
+            </div>
+            <div class="main_buttons_region_1">
+                <a href="truth_table_page.html"><button id="rp_btn_4">Truth tables</button></a>
+                <a href="combinations.html"><button id="rp_btn_5">Combinatorics</button></a>
+                <a href="anims.html"><button id="rp_btn_6">Geometric Animation</button></a>
+
+        </section>
+    </div>
+    <div id="desc_container">
+        <div id="desc_container_top">
+            <div id="cnr_desc">
+                <h2>Number<br>Base<br>Conversion</h2>
+                <img src="./svgs/base_conversions_svg.svg" width="80%">
+            </div>
+
+            <div id="table_desc">
+                <h2>Number<br>Tables</h2>
+                <img src="./svgs/tables_svg.svg">
+
+            </div>
+            <div id="truth_table_desc">
+                <h2>Truth<br>Tables</h2> <img src="./svgs/truth_table_svg.svg" width="80%">
+
+            </div>
+        </div>
+        <div id="desc_container_top">
+            <div id="random_desc">
+                <h2>Random<br>Number<br>Generator</h2>
+                <img src="./svgs/random_num_svg.svg" width="80%">
+
+            </div>
+            <div id="cp_desc">
+                <h2>Combinatorics</h2>
+                <img src="./svgs/combinatrics_svg.svg" width="80%">
+
+            </div>
+            <div id="game_desc">
+                <h2>Geometric<br>Animation</h2>
+                <img src="./svgs/geometric_operations.svg" width="80%">
+
+
+            </div>
+        </div>
+    </div>
+
 
 </body>
+
 </html>
