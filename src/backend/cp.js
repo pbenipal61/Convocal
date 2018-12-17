@@ -17,18 +17,21 @@ function formula_selection(val) {
 function calculate() {
     var n = document.getElementById('n').value;
     var r = document.getElementById('r').value;
-    var r;
+    var res;
+    var output_str = ``;
     if (formula == 1) {
-        r = factorial(n) / (factorial(n - r) * factorial(r));
+        res = factorial(n) / (factorial(n - r) * factorial(r));
+        output_str = output_str + ` <div>using <sup>n</sup>C<sub>r</sub></div><div>${n}!/((${n}-${r})! * ${r}!)</div><div><b>${res}</b></div>`;
     } else {
-        r = factorial(n) / factorial(n - r);
+        res = factorial(n) / factorial(n - r);
+        output_str = output_str + ` <div>using <sup>n</sup>P<sub>r</sub></div><div>${n}!/(${n}-${r})!</div><div><b>${res}</b></div>`;
     }
-    show_output(r);
+    show_output(output_str);
 }
 
 function show_output(r) {
     var d = document.getElementById('output');
-    d.textContent = r;
+    d.innerHTML = r;
 
 }
 //#region     

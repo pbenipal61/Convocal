@@ -28,6 +28,9 @@
     height: 50px;
     width: 50%;
     padding: 5px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1em;
 }
 #output{
     display: flex;

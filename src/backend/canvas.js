@@ -6,10 +6,10 @@ function init_m() {
     console.log(canvas);
     document.getElementById("button").textContent = "Restart";
 
-    c = canvas.getContext('2d')
+    c = canvas.getContext('2d');
     console.log(c);
-    canvas.width = innerWidth
-    canvas.height = innerHeight
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
 
 
     init();
@@ -22,7 +22,7 @@ const mouse = {
     y: innerHeight / 2
 }
 
-const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66']
+const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
 
 // Event Listeners
 addEventListener('mousemove', event => {
@@ -69,7 +69,7 @@ function Particle(x, y, radius, color) {
 
         this.x = this.last_mouse_pos.x + Math.cos(this.radians) * this.distance_from_center;
         this.y = this.last_mouse_pos.y + Math.sin(this.radians) * this.distance_from_center;
-        console.log(Math.cos(this.radians));
+        // console.log(Math.cos(this.radians));
         this.draw(last_point);
     };
     this.draw = function (last_point) {
@@ -95,7 +95,7 @@ function Particle(x, y, radius, color) {
 let particles;
 function init() {
     console.log("init");
-    particles = []
+    particles = [];
 
     for (let i = 0; i < 50; i++) {
         const r = (Math.random() * 2) + 1;
@@ -107,7 +107,7 @@ function init() {
 // Animation Loop
 function animate() {
 
-    requestAnimationFrame(animate)
+    requestAnimationFrame(animate);
     //c.clearRect(0, 0, canvas.width, canvas.height)
     c.fillStyle = 'rgba(255,255,255,0.05';
     c.fillRect(0, 0, canvas.width, canvas.height);
@@ -121,13 +121,15 @@ function random_int_from_range(min, max) {
 }
 
 function random_color(colors) {
-    return colors[Math.floor(Math.random() * colors.length)]
+    var ind = Math.floor(Math.random() * colors.length);
+    console.log(colors[ind]);
+    return colors[ind];
 }
 
 function distance(x1, y1, x2, y2) {
-    const xDist = x2 - x1
-    const yDist = y2 - y1
+    const xDist = x2 - x1;
+    const yDist = y2 - y1;
 
-    return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2))
+    return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2));
 }
 

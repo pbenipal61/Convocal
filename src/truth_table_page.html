@@ -5,35 +5,58 @@
     <script src="backend/truth_table_page.js"></script>
     <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/truth_table.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index_mobile.css">
 
 </head>
 
 <body>
+    <div id="logo_div">
+        <img src="./svgs/logo.svg">
+    </div>
     <div id="container">
         <div id="left_side_panel">
             <div id="right_side_panel">
                 <section id="right_side_panel_buttons">
-                    <a href="index.html"><button id="rp_btn_1">Home</button></a>
-                    <a href="cnr.html"><button id="rp_btn_2">Number base conversion</button></a>
-                    <a href="table.html"><button id="rp_btn_3">Character tables</button></a>
-                    <a href="truth_table_page.html"><button id="rp_btn_4">Truth tables</button></a>
-                    <a href="nolink"><button id="rp_btn_5">btn5</button></a>
-                    <a href="nolink"><button id="rp_btn_6">btn6</button></a>
-
+                    <div class="main_buttons_region_1">
+                        <a href="index.html"><button id="rp_btn_1">Home</button></a>
+                        <a href="cnr.html"><button id="rp_btn_2">Number
+                                Base Conversion</button></a>
+                        <a href="character_table.html"><button id="rp_btn_3">Character
+                                Tables</button></a>
+                    </div>
+                    <div class="main_buttons_region_1">
+                        <a href="truth_table_page.html"><button id="rp_btn_4">Truth
+                                Tables</button></a>
+                        <a href="combinations.html"><button id="rp_btn_5">Combinatorics</button></a>
+                        <a href="anims.html"><button id="rp_btn_6">Geometric Animation</button></a>
+                    </div>
                 </section>
             </div>
         </div>
         <div id="intro">
-            <h1>Truth tables</h1>
-            <p>This tool helps you calculate the truth table for a logical statement</p>
-        </div>
-        <div id="Instructions">
-            <h1>Instructions</h1>
-            <p>\/ is or and /\ is and and ~ denotes a not variable . Correct syntax is important for this tool to work.</p>
+            <div id="intro_image_holder">
+                <img src="./svgs/truth_table_svg.svg" width="80%">
+            </div>
+            <div id="intro_instructions_holder">
+                <h1>Truth Table</h1>
+
+                <p>Generate truth table for any formula <br>
+                    This tools only supports two variables right now.<br>
+                </p>
+                <p style="color:black">
+                    <b> ~ can be to indication a 'not' number<br>
+                        /\ indicates 'and' gate<br>
+                        \/ indicates 'or' date<br>
+                        eg. a/\(a\/b)<br>
+                        Correct use of brackets in important .
+                    </b>
+
+                </p>
+            </div>
         </div>
     </div>
     <section id="input">
-        <input type="text" name="enter formula" placeholder="enter formula" id="input_exp" oninput="init()"><br>
+        <input type="text" name="enter formula" placeholder="Enter a formula" id="input_exp" oninput="init()"><br>
     </section>
     <div id="output"></div>
 

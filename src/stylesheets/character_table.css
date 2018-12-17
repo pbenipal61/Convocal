@@ -48,6 +48,17 @@ th, td{
     display: flex;
     justify-content: center;
 }
+#generate_button_div button{
+
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-right: 2%;
+    outline: none;
+   
+}
 
 #output{
     display: flex;
