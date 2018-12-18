@@ -67,3 +67,18 @@ th, td{
     display: flex;
     justify-content: center;
 }
+
+#input_fields_1{
+
+    display: flex;
+    justify-content: center;
+    height: 50%;
+}
+#input_fields_1 input{
+
+    height: 50px;
+    width: 50%;
+    padding: 5px;
+    margin-right: 2%;
+    font-size: 1.5em;
+}
