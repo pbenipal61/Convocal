@@ -22,11 +22,14 @@
     color: white;
     display: flex;
     flex-direction: row;
+    justify-content: center;
  
 }
 
 #intro_image_holder{
-    width: 50%;
+    width: 30%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 #intro_instructions_holder{
     width: 50%;
