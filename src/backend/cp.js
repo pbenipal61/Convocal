@@ -2,13 +2,21 @@
 var formula = 1;
 function formula_selection(val) {
     if (val == 0) {
-        document.getElementById("npr").style.backgroundColor = "#3177B7";
-        document.getElementById("ncr").style.backgroundColor = "white";
+        var a = document.getElementById("npr");
+        a.style.backgroundColor = "#3177B7";
+        a.style.color = "white";
+        var b = document.getElementById("ncr");
+        b.style.backgroundColor = "white";
+        b.style.color = 'black';
         formula = 0;
     }
     else {
-        document.getElementById("npr").style.backgroundColor = "white";
-        document.getElementById("ncr").style.backgroundColor = "#3177B7";
+        var a = document.getElementById("npr");
+        a.style.backgroundColor = "white";
+        a.style.color = 'black';
+        var b = document.getElementById("ncr");
+        b.style.backgroundColor = "#3177B7";
+        b.style.color = 'white';
         formula = 1;
     }
 }
